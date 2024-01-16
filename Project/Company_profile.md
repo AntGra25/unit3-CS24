@@ -2,8 +2,6 @@
 
 ![Projekt bez nazwy](https://github.com/AntGra25/unit3-CS24/assets/142757981/58c58c9f-8682-41ad-bfde-d1c91bd507fe)
 **Figure 1** The *Mantis* logo
-## Photo of item
-![image](https://github.com/AntGra25/unit3-CS24/assets/142757981/d40e8fef-db41-41e6-bb1b-6172fee688a6)
 
 ## Mantis description
 We want to make high quality table tennis rackets with a particular focus on higher level play. To this end, we ensure the following for our products:
@@ -33,3 +31,11 @@ The outer layer of the racket. There are many different types of rubber, but the
 
 ### Table tennis glue
 Used to attach the rubber to the blade. The glues that are most commonly used come from standard table tennis brands such as Butterfly, Donic, STIGA, and DHS, as most conventional glues will not work
+
+
+
+
+![image](https://github.com/AntGra25/unit3-CS24/assets/142757981/543b8394-eda9-4e99-93b9-59e504acad9a)
+
+**Figure 2** Table tennis racket composition
+
