@@ -1,5 +1,7 @@
 # Mantis table tennis rackets
 
+![Projekt bez nazwy](https://github.com/AntGra25/unit3-CS24/assets/142757981/58c58c9f-8682-41ad-bfde-d1c91bd507fe)
+**Figure 1** The *Mantis* logo
 ## Photo of item
 ![image](https://github.com/AntGra25/unit3-CS24/assets/142757981/d40e8fef-db41-41e6-bb1b-6172fee688a6)
 
