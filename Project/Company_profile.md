@@ -39,3 +39,4 @@ Used to attach the rubber to the blade. The glues that are most commonly used co
 
 **Figure 2** Table tennis racket composition
 
+## New employee: Victor Rodas
