@@ -38,3 +38,6 @@ print(Map.get_map())
 ## 2. Proof of Work
 
 ![Quiz038](https://github.com/AntGra25/unit3-CS24/assets/142757981/7abb4847-7fff-4b96-92f2-8ba51b96c815)
+
+
+## 3. UML Diagram
