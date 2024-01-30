@@ -67,3 +67,6 @@ Screen:
 
 https://github.com/AntGra25/unit3-CS24/assets/142757981/24dcc01c-bdba-45ee-a108-42ab127228a5
 
+
+## 3. UML Diagram
+
