@@ -30,3 +30,5 @@ print(account.calculate_interest())
 ## 2. Proof of Work
 
 ![Quiz037](https://github.com/AntGra25/unit3-CS24/assets/142757981/c010d9c5-0e65-4f4a-842f-b0b249042c36)
+
+## 3. UML Diagram
