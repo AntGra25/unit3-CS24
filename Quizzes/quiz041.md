@@ -37,7 +37,7 @@ class quiz41(MDApp):
 
             if won() and btn.text != '':
                 self.root.ids.game_header.text = f'{btn.text} Player won!'
-            elif self.count == 9:
+            elif self.count == 9 and 'won' not in self.root.ids.game_header.text:
                 self.root.ids.game_header.text = 'Tie!'
 
     def won(self):
@@ -134,3 +134,11 @@ Screen:
 
 ```
 ## 2. Proof of Work
+
+
+https://github.com/AntGra25/unit3-CS24/assets/142757981/8f07aa48-cb07-424a-8cd9-ba50dc9063c2
+
+
+
+https://github.com/AntGra25/unit3-CS24/assets/142757981/afc3df34-f69e-484a-8663-16155543cb62
+
