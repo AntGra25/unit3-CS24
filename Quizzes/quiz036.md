@@ -23,3 +23,6 @@ class Convert:
 
 ## 2. Proof of Work
 ![Quiz036](https://github.com/AntGra25/unit3-CS24/assets/142757981/dee1d4a7-25bc-4ce9-a204-e17de4f2d363)
+
+
+## 3. UML Diagram
