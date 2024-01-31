@@ -40,7 +40,7 @@ class quiz41(MDApp):
             elif self.count == 9 and 'won' not in self.root.ids.game_header.text:
                 self.root.ids.game_header.text = 'Tie!'
 
-    def won(self):
+    def won(self) -> bool:
         win = False
         board = [
             [self.root.ids.btn00.text, self.root.ids.btn01.text, self.root.ids.btn02.text],
