@@ -143,3 +143,5 @@ https://github.com/AntGra25/unit3-CS24/assets/142757981/afc3df34-f69e-484a-8663-
 
 ## 3. UML Diagram
 
+![Quiz041C](https://github.com/AntGra25/unit3-CS24/assets/142757981/2085d7ed-8477-4a3a-88dc-21895ec79b74)
+
