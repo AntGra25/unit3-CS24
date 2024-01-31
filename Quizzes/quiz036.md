@@ -26,3 +26,6 @@ class Convert:
 
 
 ## 3. UML Diagram
+
+![Quiz036C](https://github.com/AntGra25/unit3-CS24/assets/142757981/2014c828-bff4-4ba6-9c26-ef3d63988a52)
+
