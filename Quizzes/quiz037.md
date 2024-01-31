@@ -32,3 +32,6 @@ print(account.calculate_interest())
 ![Quiz037](https://github.com/AntGra25/unit3-CS24/assets/142757981/c010d9c5-0e65-4f4a-842f-b0b249042c36)
 
 ## 3. UML Diagram
+
+![Quiz037C](https://github.com/AntGra25/unit3-CS24/assets/142757981/72b4a6e0-be47-4682-9f76-01037303c6b3)
+
