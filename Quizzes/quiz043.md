@@ -22,3 +22,6 @@ select item from ITEM join INHABITANT I on (select I.personid where I.job = 'Her
 ![Quiz043 5](https://github.com/AntGra25/unit3-CS24/assets/142757981/9d47d1de-981f-482c-bc5b-ff9a6ff18dea)
 ![Quiz043 6](https://github.com/AntGra25/unit3-CS24/assets/142757981/f04fb0da-dbdd-4829-9a8d-e8dc1107e1b9)
 
+## 3. UML Diagram
+
+![Quiz043C](https://github.com/AntGra25/unit3-CS24/assets/142757981/60f0545c-33d7-4446-befc-afca1379f276)
