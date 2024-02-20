@@ -27,3 +27,4 @@ print(flight2.get_info())
 ![Quiz050](https://github.com/AntGra25/unit3-CS24/assets/142757981/15d929d9-657c-4724-87c5-d856c2fcd780)
 
 ## 3. UML Diagram
+![Quiz050C](https://github.com/AntGra25/unit3-CS24/assets/142757981/c9d9bab7-4e97-4702-8005-a103f0723c97)
