@@ -1,8 +1,7 @@
 # Quiz044
 
-## 1. Create the UML Diagram
-
-![Quiz044C](https://github.com/AntGra25/unit3-CS24/assets/142757981/842eb000-ce18-42bc-8333-5bb0ca46eb6b)
+## 1. ER Diagram
+![Quiz044 1C](https://github.com/AntGra25/unit3-CS24/assets/142757981/6ddbcf40-35f3-4973-aa03-7df8cf5031ac)
 
 ## 2. Create the SQL queries to find the responsible for the fraudulent transaction
 
