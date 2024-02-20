@@ -81,5 +81,5 @@ https://github.com/AntGra25/unit3-CS24/assets/142757981/bf0cb6b7-961a-413f-9ebd-
 
 ![Quiz042C](https://github.com/AntGra25/unit3-CS24/assets/142757981/4153fe59-0e5d-404c-8269-9b097e2e38d9)
 
-**Figure taken from '[2023] Quizes' Google Slides presentation**
+**Figure taken from '[2023] Quizzes' Google Slides presentation**
 
