@@ -4,3 +4,4 @@
 
 ## 2. Proof of Work
 
+## 3. UML Diagram
