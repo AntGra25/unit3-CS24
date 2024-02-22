@@ -1,4 +1,4 @@
-# Quiz051
+# Quiz052
 
 ## 1. Solution
 ```.py
@@ -40,3 +40,4 @@ print(test_wheel.get_km_per_rotation())
 ![Quiz052](https://github.com/AntGra25/unit3-CS24/assets/142757981/608ba8a8-3dd6-46c4-a18a-70766caa141b)
 
 ## 3. UML Diagram
+![Quiz052C](https://github.com/AntGra25/unit3-CS24/assets/142757981/c75df0d9-50b7-4fd1-8b20-4ed355df1fab)
