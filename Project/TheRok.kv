@@ -1,0 +1,311 @@
+ScreenManager:
+    LoginScreen:
+        name: 'Login'
+    RegisterScreen:
+        name: 'Register'
+    OwnerMenu:
+        name: 'Omenu'
+    CustomerServiceMenu:
+        name: 'Cmenu'
+    EmployeeInfo:
+        name: 'EmployeeInfo'
+    RegisterCustomer:
+        name: 'CustomerReg'
+    EmployeeInventory:
+        name: 'EmployeeInv'
+    OwnerInventory:
+        name: 'OwnerInv'
+    OrderHistory:
+        name: 'OrderHist'
+
+<LoginScreen>:
+    FitImage:
+        size_hint: 1, 1
+        source: 'LoginBG.jpg'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: 0.8, 0.9
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        md_bg_color: 'white'
+        radius: [10, 10, 10, 10]
+
+        MDLabel:
+            size_hint: 1, 0.5
+            halign: 'center'
+            text: 'Login'
+            font_size: '36pt'
+
+        MDTextField:
+            id: uname
+            size_hint: 0.8, 0.125
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            hint_text: 'Enter username or email'
+            helper_text_mode: 'persistent'
+            icon_left: 'email'
+
+        MDTextField:
+            id: upass
+            size_hint: 0.8, 0.125
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            hint_text: 'Enter password'
+            helper_text_mode: 'persistent'
+            icon_left: 'key'
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            spacing: 150
+            size_hint: 0.8, 0.25
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            MDFlatButton:
+                size_hint: 0.5, 0.6
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                text: 'Login'
+                md_bg_color: '#ffbc1e'
+                text_color: 'white'
+                on_press:
+                    root.try_login()
+
+
+            MDFlatButton:
+                size_hint: 0.5, 0.6
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                text: 'Signup'
+                md_bg_color: '#fa183e'
+                text_color: 'white'
+                on_press:
+                    root.parent.current = 'Register'
+
+<OwnerMenu>:
+    FitImage:
+        size_hint: 1, 1
+        source: 'LoginBG.jpg'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: 0.8, 0.9
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        md_bg_color: 'white'
+        radius: [10, 10, 10, 10]
+
+        MDFlatButton:
+            size_hint: 0.5, 0.6
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: 'Register employee'
+            md_bg_color: '#ffbc1e'
+            text_color: 'white'
+            on_press:
+                root.parent.current = 'EmployeeInfo'
+
+        MDFlatButton:
+            size_hint: 0.5, 0.6
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: 'Inventory'
+            md_bg_color: '#ffbc1e'
+            text_color: 'white'
+            on_press:
+                button_pressed()
+
+        MDFlatButton:
+            size_hint: 0.5, 0.6
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: 'Material requests'
+            md_bg_color: '#ffbc1e'
+            text_color: 'white'
+            on_press:
+                button_pressed()
+
+        MDFlatButton:
+            size_hint: 0.5, 0.6
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: 'Order history'
+            md_bg_color: '#ffbc1e'
+            text_color: 'white'
+            on_press:
+                button_pressed()
+
+        MDFlatButton:
+            size_hint: 0.5, 0.6
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: 'Sign out'
+            md_bg_color: '#ffbc1e'
+            text_color: 'white'
+            on_press:
+                button_pressed()
+
+<CustomerServiceMenu>:
+    FitImage:
+        size_hint: 1, 1
+        source: 'LoginBG.jpg'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: 0.8, 0.9
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        md_bg_color: 'white'
+        radius: [10, 10, 10, 10]
+
+        MDFlatButton:
+            size_hint: 0.5, 0.6
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: 'Make product'
+            md_bg_color: '#ffbc1e'
+            text_color: 'white'
+            on_press:
+                button_pressed()
+
+        MDFlatButton:
+            size_hint: 0.5, 0.6
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: 'Register Customer'
+            md_bg_color: '#ffbc1e'
+            text_color: 'white'
+            on_press:
+                button_pressed()
+
+        MDFlatButton:
+            size_hint: 0.5, 0.6
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: 'Inventory'
+            md_bg_color: '#ffbc1e'
+            text_color: 'white'
+            on_press:
+                button_pressed()
+
+        MDFlatButton:
+            size_hint: 0.5, 0.6
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: 'Order history'
+            md_bg_color: '#ffbc1e'
+            text_color: 'white'
+            on_press:
+                button_pressed()
+
+        MDFlatButton:
+            size_hint: 0.5, 0.6
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: 'Sign out'
+            md_bg_color: '#ffbc1e'
+            text_color: 'white'
+            on_press:
+                button_pressed()
+
+
+<RegisterScreen>:
+
+    FitImage:
+        size_hint: 1, 1
+        source: 'LoginBG.jpg'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: 0.8, 0.9
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        md_bg_color: 'white'
+        radius: [10, 10, 10, 10]
+
+        MDLabel:
+            size_hint: 1, 0.25
+            halign: 'center'
+            text: 'Register'
+            font_size: '36pt'
+
+        MDTextField:
+            size_hint: 0.8, 0.125
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            hint_text: 'Enter username'
+            helper_text_mode: 'persistent'
+            icon_left: 'account'
+
+        MDTextField:
+            size_hint: 0.8, 0.125
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            hint_text: 'Enter email'
+            helper_text_mode: 'persistent'
+            icon_left: 'email'
+
+        MDTextField:
+            size_hint: 0.8, 0.125
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            hint_text: 'Enter password'
+            helper_text_mode: 'persistent'
+            icon_left: 'key'
+
+        MDTextField:
+            size_hint: 0.8, 0.125
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            hint_text: 'Confirm password'
+            helper_text_mode: 'persistent'
+            mode: 'rectangle'
+            icon_left: 'key'
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            spacing: 150
+            size_hint: 0.8, 0.25
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            MDFlatButton:
+                size_hint: 0.5, 0.6
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                text: 'Submit'
+                md_bg_color: '#ffbc1e'
+                text_color: 'white'
+                on_press:
+                    button_pressed()
+
+            MDFlatButton:
+                size_hint: 0.5, 0.6
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                text: 'Cancel'
+                md_bg_color: '#fa183e'
+                text_color: 'white'
+                on_press:
+                    root.parent.current = 'Login'
+
+<EmployeeInfo>:
+    MDLabel:
+        pos_hint: {'center_x':.5, 'top':.9}
+        text: 'Employee Information'
+        font_style: 'H2'
+        halign: 'center'
+        size_hint: 0.8, 0.08
+
+    MDLabel:
+        text: "New Record"
+        font_style: 'H4'
+        pos_hint: {'center_x':.5, 'top':.3}
+
+    MDBoxLayout:
+        orientation: 'horizontal'
+        size_hint: .8, .08
+        pos_hint: {'center_x':.5, 'top':.2}
+
+        MDTextField:
+            id: full_name
+            hint_text: 'Name'
+            size_hint_x: .2
+        MDTextField:
+            id: email
+            hint_text: 'Email address'
+            size_hint_x: .2
+        MDTextField:
+            id: c_position
+            hint_text: 'Position'
+            size_hint_x: .2
+        MDRaisedButton:
+            text: "save"
+            on_release: root.save()
+
+    BackButton:
+        on_press: self.parent.current = "Omenu"
+
+<BackButton>:
+    MDRectangleFlatIconButton:
+        icon: "arrow-left"
+        text: "Back"
+        pos_hint: {'left': 1, 'bottom': 1}
+        font_size: "10pt"
+        text_color: "white"
+        md_bg_color: "blue"
