@@ -19,6 +19,8 @@ My client is passionate about creating high quality basketballs that can be cust
 
 ![SCapproval](https://github.com/AntGra25/unit3-CS24/assets/142757981/2169d80c-11ba-44d8-a0ed-fb27fb355c74)
 
+## Design Statement
+I will develop an application for the use of the company staff. The application will feature an interactive GUI (Graphical User Interface) and will be developed in Python and KivyMD over the period of 4 weeks. Information useful to the company and necessary for the application will be stored in an SQLite database.
 
 # Criteria B: Design
 
