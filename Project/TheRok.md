@@ -59,4 +59,223 @@ My client is passionate about creating high quality basketballs that can be cust
 * Functions
 * If statements
 
+## TheRok.py
 
+### Imports
+```.py
+from kivymd.app import MDApp
+from kivy.core.window import Window
+from kivymd.uix.button import MDRectangleFlatIconButton, MDFlatButton
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.menu import MDDropdownMenu
+from kivymd.uix.screen import MDScreen
+from kivymd.uix.datatables import MDDataTable
+from kivymd.uix.list import OneLineListItem
+from kivymd.uix.snackbar import Snackbar
+from Unit3.Tasks.my_lib3 import DatabaseWorker
+```
+
+The code starts by importing several necessary libraries. The libraries related to kivymd will be used to help make the GUI and add different types of widgets to it. The 'my_lib3' library contains the 'DatabaseWorker' class which will help to access the SQLite database. This class uses the sqlte3 library in order to enable this.
+
+### App
+```.py
+class TheRok(MDApp):
+    db = DatabaseWorker("the_rok.db")
+    def build(self):
+        Window.size = (800, 600)
+```
+
+This class is a subclass of MDApp and represents the main application. In it, the connection to the database is established through the DatabaseWorker class and saved to the 'db' variable. This makes it easily accessible in the later parts of the code. The 'build' method is also used to set the window size with the help of the 'Window' class
+
+### BaseTableScreen
+```.py
+class BaseTableScreen(MDScreen):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.data_tables = None
+        self.selected_rows = []
+
+    def on_pre_enter(self, *args):
+        column_names = self.get_column_names()
+        self.data_tables = MDDataTable(
+            size_hint=(.8, .5),
+            pos_hint={'center_x': .5, 'top': .8},
+            use_pagination=False,
+            check=True,
+            column_data=column_names,
+        )
+        self.data_tables.bind(on_row_press=self.row_pressed)
+        self.data_tables.bind(on_check_press=self.checkbox_pressed)
+        self.add_widget(self.data_tables)
+        self.update()
+
+    def get_column_names(self):
+        return []
+
+    def row_pressed(self, table, cell):
+        print(f"Values clicked {cell.text}")
+
+    def checkbox_pressed(self, table, current_row):
+        print(table, current_row)
+
+    def update(self):
+        pass
+```
+
+As I will be using tablescreens to present data throughout the whole project, I decided to create a template for them with this class. It has many placeholder methods and variables that are to be edited when creating a child class.
+
+### Login System
+```.py
+class LoginScreen(MDScreen):
+    def try_login(self):
+        success = False
+        uname = self.ids.uname.text
+        upass = self.ids.upass.text
+        udata = TheRok.db.search(f"SELECT * from staff where uname = '{uname}' or email = '{uname}'", multiple=True)
+        if len(udata) > 0:
+            udata = udata[0]
+            real_uname = udata[2]
+            real_email = udata[3]
+            real_upass = udata[4]
+            position = udata[5]
+            if (real_uname == uname or real_email == uname) and real_upass == upass:
+                success = True
+
+        if success:
+            self.ids.uname.text = ''
+            self.ids.upass.text = ''
+            if position == 'Owner':
+                self.parent.current = 'Omenu'
+            if position == 'Employee':
+                self.parent.current = 'Cmenu'
+
+    def toggle_password_visibility(self):
+        self.ids.upass.password = not self.ids.upass.password
+```
+
+
+### Registration System
+```.py
+class RegisterScreen(MDScreen):
+    def try_register(self):
+        name = self.ids.n_name.text
+        email = self.ids.n_email.text
+        uname = self.ids.n_uname.text
+        password = self.ids.n_password.text
+        password_conf = self.ids.nc_password.text
+        udata = TheRok.db.search(f"SELECT * from staff where name = '{name}' and email = '{email}' and password is null",
+                                 multiple=True)
+        if len(udata) > 0:
+            if password == password_conf:
+                save_query = f"UPDATE staff set uname = '{uname}', password = '{password}' where name = '{name}'"
+                TheRok.db.run_query(save_query)
+                self.parent.current = 'login'
+            else:
+                self.ids.nc_password.error = True
+                self.ids.nc_password.helper_text = "Password does not match"
+        else:
+            Snackbar(text="No account with this name and email is registered", bg_color=(1,0,0,1)).open()
+
+    def toggle_password_visibility(self):
+        self.ids.n_password.password = not self.ids.n_password.password
+        self.ids.nc_password.password = not self.ids.nc_password.password
+
+```
+
+
+### Menus
+```.py
+class OwnerMenu(MDScreen):
+    pass
+
+
+class EmployeeMenu(MDScreen):
+    pass
+```
+
+### Staff Management System
+```.py
+class EmployeeInfo(BaseTableScreen):
+    def get_column_names(self):
+        return [('id', 40), ('Name', 30), ('Username', 30), ('Email', 40), ('Password', 100), ('Position', 30)]
+
+    def update(self):
+        data = TheRok.db.search(query='SELECT * from staff', multiple=True)
+        self.data_tables.update_row_data(
+            None, data
+        )
+
+    def save(self):
+        name = self.ids.full_name.text
+        email = self.ids.email.text
+        position = self.ids.c_position.text
+        print(name, email, position)
+        save_query = f"""INSERT into staff (name, email, position)
+        values('{name}', '{email}', '{position}')"""
+        TheRok.db.run_query(query=save_query)
+        self.update()
+```
+
+### Customer Registration System
+
+```.py
+class RegisterCustomer(MDScreen):
+    def save_customer(self):
+        name = self.ids.name.text
+        email = self.ids.email.text
+        address = self.ids.address.text
+        card = self.ids.card.text
+        expiration = self.ids.expiration.text
+        cvv = self.ids.cvv.text
+
+        save_query = f"""INSERT INTO customer (name, email, address, card, expiration, cvv)
+                         VALUES('{name}', '{email}', '{address}', '{card}', '{expiration}', '{cvv}')"""
+        TheRok.db.run_query(query=save_query)
+
+    def reset_fields(self):
+        self.ids.name.text = ''
+        self.ids.email.text = ''
+        self.ids.address.text = ''
+        self.ids.card.text = ''
+        self.ids.expiration.text = ''
+        self.ids.cvv.text = ''
+```
+
+
+## TheRok.kv
+
+### ScreenManager
+
+```.kv
+ScreenManager:
+    LoginScreen:
+        name: 'Login'
+    RegisterScreen:
+        name: 'Register'
+    OwnerMenu:
+        name: 'Omenu'
+    EmployeeMenu:
+        name: 'Cmenu'
+    EmployeeInfo:
+        name: 'EmployeeInfo'
+    RegisterCustomer:
+        name: 'CustomerReg'
+```
+
+### MDIconButton
+
+```.kv
+MDIconButton:
+    icon: "eye-off" if root.ids.upass.password else "eye"
+    on_release: root.toggle_password_visibility()
+```
+
+### MDTextField
+
+```.kv
+MDTextField:
+        id: email
+        hint_text: 'Email'
+        pos_hint: {'center_x':.5, 'top':.7}
+        size_hint_x: .8
+```
